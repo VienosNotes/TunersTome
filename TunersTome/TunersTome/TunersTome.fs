@@ -8,6 +8,8 @@ open Xamarin.Forms
 
 module App = 
     open Xamarin.Forms
+    let app = Application.Current
+    
 
     type Player =
         { ID : int
@@ -48,7 +50,7 @@ module App =
           content = View.StackLayout(padding = 20.0, verticalOptions = LayoutOptions.Center,
             children = [ 
                 View.Label(text = sprintf "%d" (getPlayer 0 model).Life, horizontalOptions = LayoutOptions.Center, widthRequest=200.0, horizontalTextAlignment=TextAlignment.Center,
-                           classId = "LifeCounterDigitStyle")               
+                           styleClass = "lifeCounterDigit")               
                 View.Button(text = "+5", command = (fun () -> dispatch (UpdateLife (0, 5))), horizontalOptions = LayoutOptions.Center)
                 View.Button(text = "+1", command = (fun () -> dispatch (UpdateLife (0, 1))), horizontalOptions = LayoutOptions.Center)
                 View.Button(text = "-5", command = (fun () -> dispatch (UpdateLife (0, -5))), horizontalOptions = LayoutOptions.Center)
@@ -60,7 +62,7 @@ module App =
 
 type App () as app = 
     inherit Application ()
-
+    do app.Resources.Add(StyleSheets.StyleSheet.FromAssemblyResource(System.Reflection.Assembly.GetExecutingAssembly(),"TunersTome.style.css"))
     let runner = 
         App.program
 #if DEBUG

@@ -19,4 +19,7 @@
     <PackageReference Update="FSharp.Core" Version="4.5.2" /> <!-- workaround for VSMac bug https://github.com/mono/monodevelop/pull/5137 --> 
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="style.css" />
+  </ItemGroup>
 </Project>

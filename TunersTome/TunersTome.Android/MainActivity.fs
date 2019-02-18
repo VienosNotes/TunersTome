@@ -13,8 +13,9 @@ open Android.OS
 open Xamarin.Forms.Platform.Android
 
 [<Activity (Label = "TunersTome.Android", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
-type MainActivity() =
+type MainActivity() as main =
     inherit FormsAppCompatActivity()
+    
     override this.OnCreate (bundle: Bundle) =
         FormsAppCompatActivity.TabLayoutResource <- Resources.Layout.Tabbar
         FormsAppCompatActivity.ToolbarResource <- Resources.Layout.Toolbar

@@ -4677,9 +4677,6 @@ namespace TunersTome.Android
 			// aapt resource value: 0x7f0c000e
 			public const int CardView_Light = 2131492878;
 			
-			// aapt resource value: 0x7f0c0192
-			public const int LifeCounterDigitStyle = 2131493266;
-			
 			// aapt resource value: 0x7f0c018f
 			public const int MainTheme = 2131493263;
 			
